@@ -6,6 +6,7 @@ class Cube{
 protected:
     double x, y, z, s;
 public:
-    Cube(double x, double y, double z, double side): x(x), y(y), z(z), s(s){}
-    void print(string filename) const;
+    Cube(double x, double y, double z, double s): x(x), y(y), z(z), s(s){}
+
+    void print(string file) const;
 };
