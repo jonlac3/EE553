@@ -33,6 +33,26 @@ void Cylinder::print(string filename) const{
         f<< "           "<< "vertex " << vx3 << " " << vy3 << " " << vz3 <<endl;
         f<< "       "<< "endloop" << endl;
         f<< "    " << "endfacet" << endl;
+
+        vx1 = x + r*cos(i);
+        vy1 = y + r*sin(i);
+        vz1 = z;
+        vx2 = x + r*cos(i+slices);
+        vy2 = y + r*sin(i+slices);
+        vz2 = z;
+        vx3 = x + r*cos(i+(slices/2));       
+        vy3 = y + r*sin(i+(slices/2));        
+        vz3 = z+h;
+        nx = (vy2-vy1)*(vz3-vz1)-(vy3-vy1)*(vy2-vy1);
+        ny = (vz2-vz1)*(vx3-vx1)-(vx3-vx1)*(vz2-vz1);
+        nz = (vx2-vx1)*(vy3-vy1)-(vy3-vy1)*(vx2-vx1);
+        f<< "    " << "facet normal " << nx << " " << ny << " " << nz << endl;
+        f<< "       " << "outer loop" <<endl;
+        f<< "           "<< "vertex " << vx1 << " " << vy1 << " " << vz1 << endl;
+        f<< "           "<< "vertex " << vx2 << " " << vy2 << " " << vz2 << endl;
+        f<< "           "<< "vertex " << vx3 << " " << vy3 << " " << vz3 <<endl;
+        f<< "       "<< "endloop" << endl;
+        f<< "    " << "endfacet" << endl;
     }
        
     f<< "endsolid cylinder"<<endl;
