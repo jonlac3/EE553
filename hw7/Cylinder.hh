@@ -4,8 +4,8 @@ using namespace std;
 
 class Cylinder{
 protected:
-    double x, y, z, r, h, f;
+    double x, y, z, r, h, facets;
 public:
-    Cylinder(double x, double y, double z, double r, double h, double f): x(x), y(y), z(z), r(r), h(h), f(f){}
+    Cylinder(double x, double y, double z, double r, double h, double facets): x(x), y(y), z(z), r(r), h(h), facets(facets){}
     void print(string filename) const;
 };
