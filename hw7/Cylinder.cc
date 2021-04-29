@@ -5,12 +5,12 @@
 #include <vector>
 using namespace std;
 
-void Cylinder::print(string filename) const{
+void Cylinder::print(string file) const{
     double slices = (M_PI*2)/facets;
     //x and y coordinates of vertices
     //(x,y,z) = (x+rcos(theta), y +rsin(theta), z (or z+h) )
     ofstream f;
-    f.open(filename);
+    f.open(file);
     f << "solid cylinder"<<endl;
     for(double i = 0; i < facets; i++){
 
